@@ -1,183 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Win $500 Instantly!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Win $5000 Instantly - Cash App Offer</title>
     <style>
-        body {
-            margin: 0; padding: 0;
-            background-color: #010409;
-            font-family: 'Roboto', sans-serif;
-            color: #e6edf3;
-            display: flex; justify-content: center;
-        }
-
-        .container {
-            max-width: 420px; width: 100%;
-            padding: 15px;
-            text-align: center;
-        }
-
-        .top-star { color: #ffbc00; font-size: 20px; margin-top: 10px; }
-        .main-header {
-            color: #ffbc00; font-size: 22px; font-weight: 900;
-            margin: 5px 0 15px 0; text-transform: uppercase;
-        }
-
-        /* প্রিমিয়াম স্ট্যান্ডার্ড মেটালিক কার্ড - অতিরিক্ত শাইন ছাড়া */
-        .offer-card {
-            background: linear-gradient(145deg, #0d1117 0%, #161b22 100%);
-            border: 1px solid #30363d;
-            border-radius: 20px;
-            padding: 20px 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-        }
-
-        .congrats-text {
-            color: #ffffff; font-size: 24px; font-weight: 900;
-            display: block; margin-bottom: 2px;
-        }
-        .eligible-text {
-            color: #ffbc00; font-size: 18px; font-weight: 700;
-            display: block; margin-bottom: 15px;
-        }
-
-        /* ছবি বক্সে নিখুঁতভাবে ফিট করার জন্য অ্যাডজাস্টমেন্ট */
-        .img-box {
-            width: 100%; height: 210px; /* ফিক্সড হাইট বক্স */
-            border-radius: 12px;
-            overflow: hidden; margin-bottom: 15px;
-            border: 1px solid #444c56;
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow: hidden;
             background-color: #000;
-            display: flex; justify-content: center; align-items: center;
         }
-        .hero-img {
-            max-width: 100%; max-height: 100%;
-            width: auto; height: auto;
-            object-fit: contain; /* ছবি পুরোটা বক্সে দেখাবে, লেখা ফোকাস থাকবে */
+
+        /* আপনার ছবি 'trial.png' এখানে কানেক্ট করা হয়েছে */
+        .landing-container {
+            background-image: url('trial.png'); 
+            background-size: cover;
+            background-position: center top;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .content-overlay {
+            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.85));
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 55%;
+            z-index: 1;
+        }
+
+        .header {
+            width: 90%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .cash-app-logo {
+            width: 35px;
+            height: auto;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 400px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 900;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0,0,0,1);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 0 0 25px 0;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .claim-btn {
+            background-color: #00D632;
+            color: white;
+            padding: 18px;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
             display: block;
-        }
-
-        .progress-wrapper { margin-top: 5px; }
-        .progress-container {
-            width: 90%; height: 10px;
-            background: #21262d; border-radius: 10px;
-            margin: 0 auto 10px; overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .progress-fill {
-            height: 100%; width: 100%;
-            background: linear-gradient(90deg, #ff8c00, #ff0000);
-            box-shadow: 0 0 15px #ff4500;
-            transition: width 1s linear;
-        }
-
-        .timer-text {
-            color: #ffbc00; font-weight: 700; font-size: 15px;
-            display: flex; align-items: center; justify-content: center; gap: 5px;
-        }
-
-        /* বাটন ডিজাইন - অতিরিক্ত চকচকে ভাব কমানো হয়েছে */
-        .btn-list { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
-
-        .btn {
-            padding: 15px; border-radius: 50px;
-            text-decoration: none; color: white;
-            font-weight: 700; font-size: 14px;
-            text-transform: uppercase; display: flex; align-items: center;
-            justify-content: center; gap: 10px;
-            border: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid white;
             transition: 0.2s;
-            position: relative; overflow: hidden;
-            /* স্ট্যান্ডার্ড শাইন */
-            box-shadow: inset 0 1px 2px rgba(255,255,255,0.2), 0 4px 10px rgba(0,0,0,0.4);
         }
 
-        /* বাটনের গ্লসি লাইট ইফেক্ট কমিয়ে দেওয়া হয়েছে */
-        .btn::after {
-            content: ''; position: absolute; top: 0; left: -50%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: skewX(-20deg);
-            transition: 0.5s;
+        .claim-btn:active {
+            transform: scale(0.95);
         }
-        .btn:hover::after { left: 150%; }
 
-        .btn-orange { background: linear-gradient(180deg, #ff9500, #ff5e00); }
-        .btn-dark-orange { background: linear-gradient(180deg, #ff6a00, #e62e00); }
-        .btn-blue { background: linear-gradient(180deg, #3399ff, #0055ff); }
-        .btn-green { background: linear-gradient(180deg, #44cc44, #119911); }
-        .btn-pink { background: linear-gradient(180deg, #ff66aa, #ee1188); }
-
-        .btn:active { transform: translateY(2px); box-shadow: inset 0 2px 5px rgba(0,0,0,0.3); }
-
-        .info-box {
-            background: #0d1117; border-radius: 15px;
-            padding: 20px; margin-top: 25px; text-align: left;
-            border: 1px solid #30363d;
+        .live-payment-feed {
+            font-size: 0.85rem;
+            color: #00D632;
+            margin-top: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        .info-box h2 { font-size: 19px; margin: 0 0 10px 0; color: #fff; }
-        .info-box p { color: #8b949e; font-size: 14px; line-height: 1.6; }
 
+        @media (max-width: 600px) {
+            h1 { font-size: 1.9rem; }
+            .claim-btn { font-size: 20px; padding: 16px; }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="top-star">★</div>
-    <h1 class="main-header">Win $500 Instantly!</h1>
+    <div class="landing-container">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Cash_App_logo.svg/1280px-Cash_App_logo.svg.png" alt="Cash App" class="cash-app-logo">
+            <div style="color:white; font-size: 24px;">≡</div>
+        </div>
 
-    <div class="offer-card">
-        <span class="congrats-text">Congratulations!</span>
-        <span class="eligible-text">You Are Eligible</span>
+        <div class="content-overlay"></div>
         
-        <div class="img-box">
-            <a href="https://www.af9m8trk.com/RWG11EZJ/5JY122KX/?s1=Mashbir">
-                <img src="hero.png" class="hero-img" alt="Official Offer Image">
-            </a>
-        </div>
-
-        <div class="progress-wrapper">
-            <div class="progress-container">
-                <div id="bar" class="progress-fill"></div>
+        <div class="cta-content">
+            <h1>WIN $5000 INSTANTLY!</h1>
+            <p>Limited Slots Available! Claim Your Reward Securely via Cloudflare.</p>
+            
+            <a href="https://www.af9m8trk.com/RWG11EZJ/5JY122KX/?s1=Mashbir" class="claim-btn">CLAIM NOW 🔒</a>
+            
+            <div class="live-payment-feed">
+                ● Live: User ******4 claimed $5000 in TX!
             </div>
-            <div class="timer-text">🔥 Offer ends in <span id="timer">03:30</span> ⌛</div>
         </div>
     </div>
-
-    <div class="btn-list">
-        <a href="https://www.af9m8trk.com/RWG11EZJ/TTR12295/?s1=Miyad" class="btn btn-orange">💰 CLAIM NOW $450 💰</a>
-        <a href="https://www.af9m8trk.com/RWG11EZJ/TTR12295/?s1=Miyad" class="btn btn-dark-orange">🔥 OTHER SPECIAL OFFERS 🔥</a>
-        <a href="https://www.af9m8trk.com/RWG11EZJ/TTR12295/?s1=Miyad" class="btn btn-blue">💸 GET $350 CASH APP NOW!</a>
-        <a href="https://www.af9m8trk.com/RWG11EZJ/TTR12295/?s1=Miyad" class="btn btn-green">💵 GET $500 CASH TO YOUR ACCOUNT</a>
-        <a href="https://www.af9m8trk.com/RWG11EZJ/TTR12295/?s1=Miyad" class="btn btn-pink">🎁 $100 TACO BELL GIFT CARD!</a>
-    </div>
-
-    <div class="info-box">
-        <h2>🚀 Don't Miss Your Chance!</h2>
-        <p>This is your ultimate moment to win big! Join thousands of verified winners already enjoying instant cash rewards. By clicking <strong>CLAIM NOW</strong>, you secure your exclusive spot for cash prizes, gift cards, and premium bonuses.</p>
-        <p>Don't let someone else take your spot. Every second counts! Be smart, act quickly, and unlock your exclusive $5,000 reward before time runs out. 🔥</p>
-    </div>
-</div>
-
-<script>
-    let time = 210;
-    const total = 210;
-    const timerEl = document.getElementById('timer');
-    const barEl = document.getElementById('bar');
-
-    setInterval(() => {
-        let m = Math.floor(time / 60);
-        let s = time % 60;
-        timerEl.innerText = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-        barEl.style.width = (time / total) * 100 + '%';
-        if (time > 0) time--;
-    }, 1000);
-</script>
 
 </body>
 </html>
