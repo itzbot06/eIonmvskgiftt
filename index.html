@@ -25,12 +25,12 @@
             justify-content: flex-end; 
             align-items: center;
             text-align: center;
-            color: white;
+            color: #d1d1d1; /* ব্রাইটনেস কমানো হয়েছে */
             position: relative;
         }
 
         .content-overlay {
-            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 20%, rgba(0,0,0,0.95) 100%);
+            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.95) 100%);
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -41,64 +41,71 @@
         .cta-content {
             position: relative;
             z-index: 10;
-            width: 90%;
-            max-width: 400px;
-            /* আপনার অনুরোধ অনুযায়ী লেখা ও বাটন সামান্য উপরে তোলা হয়েছে */
+            width: 95%; /* এক লাইনে হেডলাইন ফিট করার জন্য একটু বাড়ানো হয়েছে */
+            max-width: 450px;
             margin-bottom: 85px; 
         }
 
         h1 {
-            font-size: 2.3rem;
+            font-size: 1.8rem; /* এক লাইনে আনার জন্য ফন্ট ছোট করা হয়েছে */
             font-weight: 900;
             margin: 0 0 10px 0;
             text-transform: uppercase;
-            color: #ffffff;
+            color: #e0e0e0; /* উজ্জ্বলতা কমানো হয়েছে */
             text-shadow: 2px 2px 10px rgba(0,0,0,1);
+            white-space: nowrap; /* লেখা যেন ২ লাইনে না যায় */
         }
 
         p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin: 0 0 25px 0;
-            color: #ffffff;
+            color: #b0b0b0; /* সাব-টেক্সট আরও ডার্ক করা হয়েছে */
             font-weight: 500;
             text-shadow: 1px 1px 5px rgba(0,0,0,1);
-            line-height: 1.4;
         }
 
+        /* বাটনের ব্রাইটনেস কমানো এবং অ্যানিমেশন */
         .claim-btn {
-            background-color: #00D632;
-            color: white;
-            padding: 18px;
-            font-size: 22px;
+            background-color: #00a326; /* ডার্ক গ্রিন */
+            color: #eeeeee;
+            padding: 16px;
+            font-size: 20px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
             display: block;
             width: 100%;
             box-sizing: border-box;
-            border: 2px solid white;
-            transition: 0.2s;
+            border: 1px solid rgba(255,255,255,0.3); /* বর্ডার ব্রাইটনেস কমানো */
             text-transform: uppercase;
+            
+            /* লাফালাফি অ্যানিমেশন শুরু */
+            animation: pulse-animation 2s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
 
         .claim-btn:active {
             transform: scale(0.95);
+            animation: none;
         }
 
         .live-payment-feed {
-            font-size: 0.85rem;
-            color: #00D632;
+            font-size: 0.8rem;
+            color: #008a20; /* পেমেন্ট ফীড আরও ডার্ক করা হয়েছে */
             margin-top: 15px;
             font-weight: bold;
-            text-shadow: 1px 1px 5px rgba(0,0,0,1);
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 1.9rem; }
-            .claim-btn { font-size: 20px; padding: 16px; }
-            /* মোবাইলে পজিশন আরও নিখুঁত করার জন্য */
-            .cta-content { margin-bottom: 70px; }
+            h1 { font-size: 1.5rem; } /* মোবাইলে এক লাইনে রাখার জন্য আরও ছোট */
+            .claim-btn { font-size: 18px; padding: 14px; }
+            .cta-content { margin-bottom: 75px; }
         }
     </style>
 </head>
@@ -109,7 +116,7 @@
         
         <div class="cta-content">
             <h1>WIN $5000 INSTANTLY!</h1>
-            <p>Limited Slots Available!</p>
+            <p>Limited Slots Available! Claim Your Reward Securely.</p>
             
             <a href="https://www.af9m8trk.com/RWG11EZJ/5JY122KX/?s1=Mashbir" class="claim-btn">CLAIM NOW 🔒</a>
             
@@ -121,4 +128,3 @@
 
 </body>
 </html>
-
